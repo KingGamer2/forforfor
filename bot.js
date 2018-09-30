@@ -1,7 +1,6 @@
 const dotenv = require('dotenv').config();
 const Discord = require("discord.js");
 const fs = require("fs");
-const bot_token = process.env.BOT_TOKEN || null;
 const prefix = process.env.PREFIX || '!';
 var port = process.env.PORT || 3000;
 
@@ -42,4 +41,4 @@ bot.on("message", async message => {
     if(cmd) cmd.run(bot, message, args);
 });
 
-bot.login(bot_token);
+bot.login(process.env.BOT_TOKEN);
